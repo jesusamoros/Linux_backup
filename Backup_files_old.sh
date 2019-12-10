@@ -1,6 +1,7 @@
 #!/bin/bash
 
 d=$(date +'%e_%b_%Y')
+host='remoteIP'
 echo "Creando directorio"
 mkdir $d.backup
 
@@ -12,4 +13,8 @@ mv  *.gz  $d.backup/
 
 echo "Comprimiendo el directorio de backups"
 tar -czvf $d.logs.tar.gz $d.backup/
+
+echo "Enviando el backup a una maquina remota"
+scp -P62500  $d.logs.tar.gz root@$host:/root
+
 
