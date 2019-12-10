@@ -9,7 +9,7 @@ mkdir $d.backup
 echo "Buscando archivos con antiguedad de mas de 10 dias y comprimiendo"
 #La extensión que se busca es *.log aunque puedes cambiarlo.
 #This find search *.log  you can change this 
-find . -name '*.log' -type f -mtime +10 -exec gzip -9 {} \;find . -name '*.log' -type f -mtime +10 -exec gzip -9 {} \;
+find . -name '*.log' -type f -mtime +10 -exec gzip -9 {} \;
 
 echo "Moviendo"
 #move files
